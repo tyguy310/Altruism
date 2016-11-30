@@ -3,15 +3,9 @@ exports.seed = (knex, Promise) => {
     Promise.all([
       knex('accounts').del()
     ])
-    .then(() => {
-      knex('profiles').del();
-    })
-    .then(() => {
-      knex('helps').del();
-    })
-    .then(() => {
-      knex('reviews').del();
-    })
+    .then(() => knex('profiles').del())
+    .then(() => knex('helps').del())
+    .then(() => knex('reviews').del())
 
   ])
     .then(() => {
