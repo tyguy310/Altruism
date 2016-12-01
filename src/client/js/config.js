@@ -5,34 +5,41 @@
   angular
     .module('Altruism.config', [])
     .config(appConfig)
-    // .run(routeStart);
 
   function appConfig ($routeProvider) {
     $routeProvider
+      .when('/', {
+        templateUrl: 'js/components/main/main.view.html',
+        controller: 'mainController',
+        controllerAs: 'mainCtrl',
+        access: true
+      })
       .when('/help', {
         templateUrl: 'js/components/help/help.view.html',
         controller: 'helpController',
         controllerAs: 'helpCtrl',
         access: true
       })
-      // .when('/user', {
-      //   templateUrl: 'js/components/user/user.view.html',
-      //   controller: 'userController',
-      //   controllerAs: 'userCtrl',
+      // .when(`/help/2`, {
+      //   templateUrl: 'js/components/help/help.view.html',
+      //   controller: 'helpController',
+      //   controllerAs: 'helpCtrl',
       //   access: true
       // })
+      .when('/register', {
+        templateUrl: 'js/components/register/register.view.html',
+        controller: 'registerController',
+        controllerAs: 'registerCtrl',
+        access: true
+      })
+      .when('/profile/', {
+        templateUrl: 'js/components/profile/profile.view.html',
+        controller: 'profileController',
+        controllerAs: 'profileCtrl',
+        access: true
+      })
       .otherwise({
         redirectTo: '/'
       });
   }
-
-  // function routeStart($rootScope, $location, $route) {
-  //   $rootScope.$on('$routeChangeStart', (event, next, current) => {
-  //     if (!next.access) {
-  //       if (!localStorage.getItem('token')) {
-  //         $location.path('/user');
-  //       }
-  //     }
-  //   });
-  // }
 })();

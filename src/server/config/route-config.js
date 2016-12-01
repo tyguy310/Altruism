@@ -8,6 +8,7 @@
     const login = require('../routes/login');
     const logout = require('../routes/logout');
     const helps = require('../routes/helps');
+    const profile = require('../routes/profile');
 
     // *** register routes *** //
     app.use('/', routes);
@@ -15,5 +16,6 @@
     app.use('/login', login);
     app.use('/help', helps);
     app.use('/logout', logout);
+    app.use('/profile', profile);
   };
 })(module.exports);

@@ -1,5 +1,5 @@
 
-(function() {
+(function () {
 
   'use strict';
 
@@ -9,7 +9,10 @@
       'Altruism.config',
       'Altruism.components.main',
       'Altruism.components.help',
-      // 'Altruism.components.user',
-      'Altruism.services.help'
+      'Altruism.components.profile',
+      'Altruism.components.register',
+      'Altruism.services.help',
+      'Altruism.services.profile',
+      'Altruism.services.register'
     ]);
 })();
