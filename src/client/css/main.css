@@ -1,32 +1,22 @@
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   position: relative;
 }
 
 .subBar {
-  clear: both;
+  width:95%;
+  margin-top: 50px;
+  z-index: 2;
 }
 
 a {
   color: #00B7FF;
 }
 
-.carousel {
-  width: 100%; /* Update to your slider width */
-  height: 400px; /* Update to your slider height */
-  position: relative;
-  overflow: hidden;
-  margin: 0;
-}
-
-.carousel li {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-li img {
-  height: 400px;
+#carousel {
   width: 100%;
+  position:relative;
+  overflow: hidden;
+  z-index: 1;
 }
