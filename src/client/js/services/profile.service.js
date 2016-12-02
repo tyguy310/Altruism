@@ -8,11 +8,12 @@
 
   profileService.$inject = ['$http'];
 
-  function profileService($http) {
+  function profileService($http, $scope) {
     /* jshint validthis: true */
     const baseURL = 'http://localhost:3000/profile/';
 
     this.getSingleProfile = function (id) {
+      console.log('service', id);
       return $http.get(`${baseURL}${id}`);
     };
   }

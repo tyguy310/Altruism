@@ -17,3 +17,11 @@ exports.getItems = (tableName, callback, itemId) => {
     .catch(err => callback(err));
   }
 };
+
+exports.postItems = (tableName, callback, object) => {
+  knex(tableName)
+  .insert(object)
+  .returning('*')
+  .then(result => callback(null, result))
+  .catch(err => callback(err))
+}

@@ -18,7 +18,7 @@ exports.seed = (knex, Promise) => {
     })
     .then(() => {
       return Promise.all([
-        knex('profiles').insert({ id: 1, first_name: 'Kevin', last_name: 'Echeverr', intro: 'Lorem Ipsum', img_url: 'ono@onos.com', city: 'Fallbrook', state: 'CA', is_asker: false, is_helper: false, account_id: 1 }),
+        knex('profiles').insert({ id: 1, first_name: 'Kevin', last_name: 'Echeverr', intro: 'Lorem Ipsum', img_url: 'http://currentsurroundings.com/content/random/calvin-hobbes/large/calvin_and_hobbes_001.jpg', city: 'Fallbrook', state: 'CA', is_asker: false, is_helper: false, account_id: 1 }),
         knex('profiles').insert({ id: 2, first_name: 'Luis', last_name: 'Vargas', intro: 'Lorem Ipsum', img_url: 'luis@yahoo.com', city: 'Ontario', state: 'CA', is_asker: false, is_helper: false, account_id: 2 }),
         knex('profiles').insert({ id: 3, first_name: 'Mario', last_name: 'Mejia', intro: 'Lorem Ipsum', img_url: 'mario@onos.com', city: 'Santa Barbara', state: 'CA', is_asker: false, is_helper: false, account_id: 3 })
 

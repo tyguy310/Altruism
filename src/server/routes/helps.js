@@ -17,9 +17,9 @@ router.get('/', (req, res, next) => {
   })
 });
 
-router.get('/:id', function (req, res, next) {
+router.get('/:id', (req, res, next) => {
   let helpID = req.params.id;
-  queries.getItems('helps', function (err, result) {
+  queries.getItems('helps', (err, result) => {
     if (err) {
       res.json({
         error: err.message || 'Help not found.'
@@ -30,6 +30,22 @@ router.get('/:id', function (req, res, next) {
       })
     }
   }, helpID);
+});
+
+router.post('/', (req, res, next) => {
+  let helpObj = req.body;
+
+  queries.postItems('helps', (err, result) => {
+    if (err) {
+      res.json({
+        error: err.message || 'Check your form'
+      })
+    } else {
+      res.json({
+        help: result
+      })
+    }
+  }, helpObj)
 });
 
 module.exports = router;

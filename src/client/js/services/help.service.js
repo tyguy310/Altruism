@@ -8,7 +8,7 @@
 
   helpService.$inject = ['$http'];
 
-  function helpService($http) {
+  function helpService ($http) {
     /* jshint validthis: true */
     const baseURL = 'http://localhost:3000/help/';
     this.getAllHelp = function () {
@@ -17,14 +17,13 @@
     this.getSingleHelp = function (id) {
       return $http.get(`${baseURL}${id}`);
     };
-    // this.addHelp = function (help) {
-    //   return $http({
-    //     method: 'POST',
-    //     url: baseURL,
-    //     data: help,
-    //     headers: {'Content-Type': 'application/json'}
-    //   });
-    //   // return $http.post(baseURL, help);
-    // };
+    this.addHelp = function (helpObj) {
+      return $http({
+        method: 'POST',
+        url: baseURL,
+        data: helpObj,
+        headers: {'Content-Type': 'application/json'}
+      });
+    };
   }
 })();

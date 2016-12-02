@@ -12,18 +12,26 @@
     /*jshint validthis: true */
     const vm = this;
     vm.form = true;
+    vm.registerObj = {};
     vm.showForm = function () {
       vm.form = true;
     };
-    $scope.$id = 3;
     registerService.Register()
-    .then((register) => {
-      console.log($scope.$id);
+    .then(register => {
       vm.register = register;
     })
     .catch((err) => {
       console.log(err) // handle this error
     });
-    //
+
+    vm.Register = () => {
+      registerService.registerAccount(vm.registerObj)
+      .then(response => {
+        $scope.$parent.$id = response.data.account[0].id;
+        vm.form = true;
+        console.log($scope.$parent.$id);
+      })
+      .catch(err => console.log('controller', err));
+    }
   }
 })();

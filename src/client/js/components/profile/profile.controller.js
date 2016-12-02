@@ -11,16 +11,16 @@
   function profileController ($scope, profileService) {
     /* jshint validthis: true */
     const vm = this;
-    const id = $scope
+    const id = $scope.$parent.$id;
     console.log(id);
 
     profileService.getSingleProfile(id)
     .then((profile) => {
-      console.log(profile);
-      vm.profile = profile.data.data;
+      console.log('response', profile.data.profile[0]);
+      vm.profile = profile.data.profile[0];
     })
     .catch((err) => {
-      console.log(err);
+      console.log('catch', err);
     });
   }
 })();
