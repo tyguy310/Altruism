@@ -20,16 +20,16 @@
         controllerAs: 'helpCtrl',
         access: true
       })
-      // .when(`/help/2`, {
-      //   templateUrl: 'js/components/help/help.view.html',
-      //   controller: 'helpController',
-      //   controllerAs: 'helpCtrl',
-      //   access: true
-      // })
       .when('/register', {
         templateUrl: 'js/components/register/register.view.html',
         controller: 'registerController',
         controllerAs: 'registerCtrl',
+        access: true
+      })
+      .when('/login', {
+        templateUrl: 'js/components/login/login.view.html',
+        controller: 'loginController',
+        controllerAs: 'loginCtrl',
         access: true
       })
       .when('/profile/', {

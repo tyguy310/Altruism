@@ -1,0 +1,15 @@
+<h1>Login</h1>
+<div ng-if="loginCtrl.form">
+  <div class="col-md-4">
+    <form ng-submit="loginCtrl.Login()">
+      <div class="form-group">
+        <input type="text" class="form-control" id="username" ng-model="loginCtrl.loginObj.username" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="email" ng-model="loginCtrl.loginObj.email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="password" ng-model="loginCtrl.loginObj.password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-default">Login</button>
+    </form>

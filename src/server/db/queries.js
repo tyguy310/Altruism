@@ -25,3 +25,24 @@ exports.postItems = (tableName, callback, object) => {
   .then(result => callback(null, result))
   .catch(err => callback(err))
 }
+
+exports.login = (callback, loginObj) => {
+  console.log('query', loginObj);
+  const username = loginObj.username;
+  const password = loginObj.password;
+  const email = loginObj.email;
+
+  if (username) {
+    knex('accounts')
+    .returning('accounts.id')
+    .where({ 'username': username, 'password': password })
+    .then(result => callback(null, result))
+    .catch(err => callback(err));
+  } else if (email) {
+    knex('accounts')
+    .returning('accounts.id')
+    .where({ 'email': email, 'password': password })
+    .then(result => callback(null, result))
+    .catch(err => callback(err));
+  }
+}

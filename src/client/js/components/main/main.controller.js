@@ -10,7 +10,7 @@
 
   function mainController ($scope) {
     /*jshint validthis: true */
-    console.log($scope.$parent.$id);
+    console.log($scope);
     this.greeting = 'Hello World!';
   }
 })();

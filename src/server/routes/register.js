@@ -1,6 +1,4 @@
 const express = require('express');
-// const passport = require('passport');
-// const Account = require('../models/account');
 const router = express.Router();
 const queries = require('../db/queries');
 
@@ -9,7 +7,6 @@ router.get('/', (req, res) => {
 });
 
 router.post('/go', (req, res, next) => {
-
   queries.postItems('accounts', (err, result) => {
     if (err) {
       res.json({

@@ -9,13 +9,14 @@
   registerController.$inject = ['$scope', 'registerService'];
 
   function registerController ($scope, registerService) {
-    /*jshint validthis: true */
+    /* jshint validthis: true */
     const vm = this;
     vm.form = true;
     vm.registerObj = {};
     vm.showForm = function () {
       vm.form = true;
     };
+
     registerService.Register()
     .then(register => {
       vm.register = register;

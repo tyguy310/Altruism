@@ -1,19 +1,22 @@
 const express = require('express');
-const passport = require('passport');
-// const Account = require('../models/account');
 const router = express.Router();
+const queries = require('../db/queries');
 
-router.get('/', (req, res) => {
-  res.render('login', {user: req.user, error: req.flash('error')});
-});
-
-router.post('/', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res, next) => {
-  req.session.save((err) => {
+router.post('/go', (req, res, next) => {
+  const loginObj = req.body;
+  console.log('route', loginObj);
+  queries.login((err, result) => {
     if (err) {
-      return next(err);
+      res.status(404).json({
+        error: 'fail'
+      })
+    } else {
+      res.status(200).json({
+        status: 'success',
+        data: result
+      })
     }
-    res.redirect('/');
-  });
+  }, loginObj)
 });
 
 module.exports = router;

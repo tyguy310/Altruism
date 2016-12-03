@@ -23,7 +23,6 @@
         data: accountObj,
         headers: {'Content-Type': 'application/json'}
       });
-// return $http.post(baseURL, register);
     };
   }
 })()
