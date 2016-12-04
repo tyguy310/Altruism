@@ -10,11 +10,20 @@
 
   function profileService($http, $scope) {
     /* jshint validthis: true */
-    const baseURL = 'http://localhost:3000/profile/';
+    const baseURL = 'https://git.heroku.com/altruism-app.git/profile/';
 
     this.getSingleProfile = function (id) {
       console.log('service', id);
       return $http.get(`${baseURL}${id}`);
+    };
+
+    this.register = (accountType, id) => {
+      return $http({
+        method: 'PUT',
+        url: baseURL + id,
+        data: accountType,
+        headers: {'Content-Type': 'application/json'}
+      });
     };
   }
 })();

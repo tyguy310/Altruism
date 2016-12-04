@@ -10,7 +10,7 @@
 
   function helpService ($http) {
     /* jshint validthis: true */
-    const baseURL = 'http://localhost:3000/help/';
+    const baseURL = 'https://git.heroku.com/altruism-app.git/help/';
     this.getAllHelp = function () {
       return $http.get(baseURL);
     };

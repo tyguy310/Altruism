@@ -11,7 +11,7 @@
   function registerController ($scope, registerService) {
     /* jshint validthis: true */
     const vm = this;
-    vm.form = true;
+    vm.form = false;
     vm.registerObj = {};
     vm.showForm = function () {
       vm.form = true;
@@ -29,7 +29,7 @@
       registerService.registerAccount(vm.registerObj)
       .then(response => {
         $scope.$parent.$id = response.data.account[0].id;
-        vm.form = true;
+        vm.form = false;
         console.log($scope.$parent.$id);
       })
       .catch(err => console.log('controller', err));

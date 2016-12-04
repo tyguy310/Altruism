@@ -27,7 +27,6 @@ exports.postItems = (tableName, callback, object) => {
 }
 
 exports.login = (callback, loginObj) => {
-  console.log('query', loginObj);
   const username = loginObj.username;
   const password = loginObj.password;
   const email = loginObj.email;

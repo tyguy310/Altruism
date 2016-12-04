@@ -1,6 +1,7 @@
 <h1>Register</h1>
+
 <div ng-if="registerCtrl.form">
-  <div class="col-md-4">
+  <div class="col-md-offset-4 col-md-4">
     <form ng-submit="registerCtrl.Register()">
       <div class="form-group">
         <input type="text" class="form-control" id="username" ng-model="registerCtrl.registerObj.username" placeholder="Username" required>
@@ -13,3 +14,5 @@
       </div>
       <button type="submit" class="btn btn-default">Register</button>
     </form>
+  </div>
+</div>

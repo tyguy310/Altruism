@@ -10,7 +10,7 @@ exports.seed = (knex, Promise) => {
   ])
     .then(() => {
       return Promise.all([
-        knex('accounts').insert({ id: 1, username: 'Ono', password: 'Smith', email: 'ono@ono.com' }),
+        knex('accounts').insert({ id: 1, username: 'tylerlmaier', password: 'password', email: 'tyler_maier@yahoo.com' }),
         knex('accounts').insert({ id: 2, username: 'Mike', password: 'Hemp', email: 'mikeo@ono.com' }),
         knex('accounts').insert({ id: 3, username: 'Ana', password: 'Zeu', email: 'ana@hotmail.com' })
 
@@ -18,7 +18,7 @@ exports.seed = (knex, Promise) => {
     })
     .then(() => {
       return Promise.all([
-        knex('profiles').insert({ id: 1, first_name: 'Kevin', last_name: 'Echeverr', intro: 'Lorem Ipsum', img_url: 'http://currentsurroundings.com/content/random/calvin-hobbes/large/calvin_and_hobbes_001.jpg', city: 'Fallbrook', state: 'CA', is_asker: false, is_helper: false, account_id: 1 }),
+        knex('profiles').insert({ id: 1, first_name: 'Tyler', last_name: 'Maier', intro: 'Just trying to save the world', img_url: 'http://currentsurroundings.com/content/random/calvin-hobbes/large/calvin_and_hobbes_001.jpg', city: 'Denver', state: 'CO', is_asker: false, is_helper: false, account_id: 1 }),
         knex('profiles').insert({ id: 2, first_name: 'Luis', last_name: 'Vargas', intro: 'Lorem Ipsum', img_url: 'luis@yahoo.com', city: 'Ontario', state: 'CA', is_asker: false, is_helper: false, account_id: 2 }),
         knex('profiles').insert({ id: 3, first_name: 'Mario', last_name: 'Mejia', intro: 'Lorem Ipsum', img_url: 'mario@onos.com', city: 'Santa Barbara', state: 'CA', is_asker: false, is_helper: false, account_id: 3 })
 

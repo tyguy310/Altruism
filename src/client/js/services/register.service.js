@@ -10,7 +10,7 @@
 
   function registerService($http) {
     /*jshint validthis: true */
-    const baseURL = 'http://localhost:3000/register/';
+    const baseURL = 'https://git.heroku.com/altruism-app.git/register/';
 
     this.Register = function (register) {
       return $http.get(baseURL)

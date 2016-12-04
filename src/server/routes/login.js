@@ -4,7 +4,7 @@ const queries = require('../db/queries');
 
 router.post('/go', (req, res, next) => {
   const loginObj = req.body;
-  console.log('route', loginObj);
+
   queries.login((err, result) => {
     if (err) {
       res.status(404).json({
