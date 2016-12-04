@@ -11,7 +11,7 @@
   const morgan = require('morgan');
   const nunjucks = require('nunjucks');
   const passport = require('passport');
-  const LocalStrategy = require('passport-local').Strategy;
+  // const LocalStrategy = require('passport-local').Strategy;
 
   // *** view folders *** //
   const viewFolders = [
