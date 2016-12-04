@@ -10,7 +10,7 @@
 
   function profileService($http, $scope) {
     /* jshint validthis: true */
-    const baseURL = 'https://git.heroku.com/altruism-app.git/profile/';
+    const baseURL = 'https://altruism-app.herokuapp.com//profile/';
 
     this.getSingleProfile = function (id) {
       console.log('service', id);

@@ -21,7 +21,7 @@
   // *** load environment variables *** //
   require('dotenv').config();
 
-  appConfig.init = function (app, express) {
+  appConfig.init = (app, express) => {
     // *** view engine *** //
     nunjucks.configure(viewFolders, {
       express: app,
@@ -35,7 +35,7 @@
     }
 
     // *** cross domain requests ***
-    const allowCrossDomain = function(req, res, next) {
+    const allowCrossDomain = (req, res, next) => {
       res.header('Access-Control-Allow-Origin', '*');
       res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
       res.header('Access-Control-Allow-Headers', 'Content-Type');
