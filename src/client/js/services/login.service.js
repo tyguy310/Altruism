@@ -10,7 +10,7 @@
 
   function loginService ($http) {
     /* jshint validthis: true */
-    const baseURL = 'http://localhost:3000/login/'
+    const baseURL = 'https://altruism-app.herokuapp.com/login/'
 
     this.login = (loginObj) => {
       return $http({
