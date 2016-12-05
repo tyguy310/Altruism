@@ -21,7 +21,9 @@
       console.log('controller', vm.loginObj);
       loginService.login(vm.loginObj)
       .then(login => {
-        this.loggedIn = true;
+        vm.loggedIn = true;
+        console.log(vm);
+        vm.form = false;
       })
       .catch((err) => console.log(err));
     }

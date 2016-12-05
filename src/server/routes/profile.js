@@ -20,7 +20,9 @@ router.get('/:id', (req, res, next) => {
 
 router.put('/:id', (req, res, next) => {
   let id = req.params.id;
-  let accountType = req.body.
+  console.log(req.body);
+  let accountType = req.body.accountType;
+
   queries.updateAccount(id, (err, result) => {
     if (err) {
       res.status(404).json({err: err.message || 'nice try'})
@@ -29,7 +31,7 @@ router.put('/:id', (req, res, next) => {
         profile: result
       })
     }
-  })
+  }, accountType)
 });
 
 module.exports = router;

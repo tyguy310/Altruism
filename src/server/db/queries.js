@@ -45,3 +45,19 @@ exports.login = (callback, loginObj) => {
     .catch(err => callback(err));
   }
 }
+
+exports.updateAccount = (id, callback, accountType) => {
+  if (accountType === 'is_helper') {
+    knex('profiles')
+    .where('id', id)
+    .update('is_helper', true)
+    .then(result => callback(null, result))
+    .catch(err => callback(err));
+  } else if (accountType === 'is_asker') {
+    knex('profiles')
+    .where('id', id)
+    .update('is_asker', true)
+    .then(result => callback(null, result))
+    .catch(err => callback(err));
+  }
+}

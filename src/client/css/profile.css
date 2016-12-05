@@ -1,10 +1,12 @@
-.profile img {
+.profile {
+  display: inline-block;
+  }
+
+  .profile img {
   width: 150px;
   height: 150px;
-  display: inline;
-  float: right;
 }
 
 .profile h3 {
-  display: inline;
+  clear: both;
 }

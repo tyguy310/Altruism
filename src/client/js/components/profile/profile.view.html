@@ -3,18 +3,20 @@
 <div class="registerContainer">
   <div class="registerButtons">
     <div ng-if="!profileCtrl.profile.is_helper">
-      <button ng-click="profileCtrl.profile.is_helper=true" type="submit" class="btn btn-default" ng-submit="profileCtrl.register(is_helper, profileCtrl.profile.id)">Register as a Helper</button>
+      <button type="button" class="btn btn-default" ng-click="profileCtrl.Register('is_helper', profileCtrl.profile.id); profileCtrl.profile.is_helper=true">Register as a Helper</button>
     </div>
     <div ng-if="!profileCtrl.profile.is_asker">
-      <button ng-click="profileCtrl.profile.is_asker=true" type="submit" class="btn btn-default">Register as a Requester</button>
+      <button ng-click="profileCtrl.Register('is_asker', profileCtrl.profile.id); profileCtrl.profile.is_asker=true" type="submit" class="btn btn-default">Register as a Requester</button>
     </div>
   </div>
 </div>
 
 <div class="container profile">
   <div class="row">
-    <h3>{{profileCtrl.profile.first_name}} {{profileCtrl.profile.last_name}}</h3>
     <img src="{{profileCtrl.profile.img_url}}">
+    <h3>{{profileCtrl.profile.first_name}} {{profileCtrl.profile.last_name}}</h3>
+    <p>{{profileCtrl.profile.city}}, {{profileCtrl.profile.state}}</p>
+    <p>{{profileCtrl.profile.intro}}</p>
   </div>
 </div>
 
