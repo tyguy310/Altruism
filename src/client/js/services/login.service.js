@@ -17,7 +17,7 @@
         method: 'POST',
         url: baseURL + 'go',
         data: loginObj,
-        headers: {'Content-Type': 'application/json'}
+        headers: {'Content-Type': 'application/json', loginObj: loginObj}
       });
     };
   }

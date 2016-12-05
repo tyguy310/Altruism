@@ -16,7 +16,6 @@
 
     profileService.getSingleProfile(id)
     .then(profile => {
-      // console.log('response', profile.data.profile[0]);
       vm.profile = profile.data.profile[0];
     })
     .catch(err => {

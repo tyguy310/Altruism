@@ -9,8 +9,8 @@
   mainController.$inject = ['$scope'];
 
   function mainController ($scope) {
-    /*jshint validthis: true */
-    console.log($scope);
+    /* jshint validthis: true */
+
     this.greeting = 'Hello World!';
   }
 })();

@@ -9,7 +9,8 @@
   loginController.$inject = ['$scope', 'loginService'];
 
   function loginController ($scope, loginService, $rootscope) {
-    /*jshint validthis: true */
+    /* jshint validthis: true */
+
     const vm = this;
     vm.form = true;
     vm.loginObj = {};
@@ -18,11 +19,10 @@
     };
 
     vm.Login = () => {
-      console.log('controller', vm.loginObj);
+
       loginService.login(vm.loginObj)
       .then(login => {
         vm.loggedIn = true;
-        console.log(vm);
         vm.form = false;
       })
       .catch((err) => console.log(err));

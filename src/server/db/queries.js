@@ -16,7 +16,17 @@ exports.getItems = (tableName, callback, itemId) => {
     .then(results => callback(null, results))
     .catch(err => callback(err));
   }
-};
+}
+
+exports.getProfile = (callback, profileId) => {
+  return Promise.all([
+    knex('profiles').where('id', profileId),
+    knex('helps').where('helper_id', profileId),
+    knex('helps').where('asker_id', profileId)
+  ])
+  .then(data => callback(null, data))
+  .catch(err => callback(err))
+}
 
 exports.postItems = (tableName, callback, object) => {
   knex(tableName)
@@ -49,6 +59,7 @@ exports.login = (callback, loginObj) => {
 exports.updateAccount = (id, callback, accountType) => {
   if (accountType === 'is_helper') {
     knex('profiles')
+    .returning('*')
     .where('id', id)
     .update('is_helper', true)
     .then(result => callback(null, result))
