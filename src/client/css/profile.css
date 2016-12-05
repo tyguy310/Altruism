@@ -10,3 +10,13 @@
 .profile h3 {
   clear: both;
 }
+
+.helps {
+  float:right;
+  display: inline-block;
+}
+
+.asks {
+  float:right;
+  display: inline-block;
+}

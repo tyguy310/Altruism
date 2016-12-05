@@ -26,9 +26,9 @@ exports.seed = (knex, Promise) => {
     })
     .then(() => {
       return Promise.all([
-        knex('helps').insert({ id: 1, asker_id: 1, helper_id: 2, description: 'Mark', subject: 'Hawk', type: 'online', address: '1000 Bob Road', city: 'San Diego', state: 'CA', zip: '90210', start_time: '00:00', end_time: '04:00' }),
-        knex('helps').insert({ id: 2, asker_id: 2, helper_id: 3, description: 'Kevin', subject: 'Holmes', type: 'online', address: '1000 Bob Road', city: 'San Diego', state: 'CA', zip: '90210', start_time: '00:00', end_time: '04:00' }),
-        knex('helps').insert({ id: 3, asker_id: 1, helper_id: 2, description: 'David', subject: 'Velasco', type: 'online', address: '1000 Bob Road', city: 'San Diego', state: 'CA', zip: '90210', start_time: '00:00', end_time: '04:00' })
+        knex('helps').insert({ id: 1, asker_id: 1, helper_id: 2, description: 'This is a description of the help', subject: 'Subject', type: 'onsite', address: '1000 Bob Road', city: 'San Diego', state: 'CA', zip: '90210', start_time: '00:00', end_time: '04:00' }),
+        knex('helps').insert({ id: 2, asker_id: 2, helper_id: 3, description: 'This is a description of the help', subject: 'Subject', type: 'onsite', address: '1000 Bob Road', city: 'San Diego', state: 'CA', zip: '90210', start_time: '00:00', end_time: '04:00' }),
+        knex('helps').insert({ id: 3, asker_id: 1, helper_id: 2, description: 'This is a description of the help', subject: 'Subject', type: 'online', address: '', city: '', state: '', zip: '', start_time: '00:00', end_time: '04:00' })
       ]);
     })
     .then(() => {

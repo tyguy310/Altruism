@@ -20,7 +20,7 @@ exports.getItems = (tableName, callback, itemId) => {
 
 exports.getProfile = (callback, profileId) => {
   return Promise.all([
-    knex('profiles').where('id', profileId),
+    knex('profiles').where('id', profileId).first(),
     knex('helps').where('helper_id', profileId),
     knex('helps').where('asker_id', profileId)
   ])
