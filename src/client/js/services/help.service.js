@@ -10,7 +10,13 @@
 
   function helpService ($http) {
     /* jshint validthis: true */
+    if (process.env.NODE_ENV === 'development') {
+      const baseURL = 'http://localhost/3000/help/'
+    }
+    else {
     const baseURL = 'https://altruism-app.herokuapp.com/help/';
+    }
+
     this.getAllHelp = function () {
       return $http.get(baseURL);
     };

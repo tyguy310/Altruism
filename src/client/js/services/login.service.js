@@ -10,8 +10,12 @@
 
   function loginService ($http) {
     /* jshint validthis: true */
-    const baseURL = 'https://altruism-app.herokuapp.com/login/';
-
+    if (process.env.NODE_ENV === 'development') {
+      const baseURL = 'http://localhost/3000/login/'
+    }
+    else {
+      const baseURL = 'https://altruism-app.herokuapp.com/login/';
+    }
     this.login = function (loginObj) {
       return $http({
         method: 'POST',

@@ -10,7 +10,12 @@
 
   function profileService($http, $scope) {
     /* jshint validthis: true */
+    if (process.env.NODE_ENV === 'development') {
+      const baseURL = 'http://localhost/3000/profile/'
+    }
+    else {
     const baseURL = 'https://altruism-app.herokuapp.com/profile/';
+    }
 
     this.getSingleProfile = function (id) {
       console.log('service', id);
