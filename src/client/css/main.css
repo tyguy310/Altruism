@@ -20,3 +20,17 @@ a {
   overflow: hidden;
   z-index: 1;
 }
+
+.how {
+  float: right;
+  /*border: 2px solid black;*/
+  border-radius: 5px;
+  margin: 3rem;
+}
+
+.why {
+  float: left;
+  /*border: 2px solid black;*/
+  border-radius: 5px;
+  margin: 3rem;
+}

@@ -6,9 +6,9 @@
     .module('Altruism.components.login', [])
     .controller('loginController', loginController);
 
-  loginController.$inject = ['$scope', 'loginService'];
+  loginController.$inject = ['$scope', 'loginService', '$window'];
 
-  function loginController ($scope, loginService, $rootscope) {
+  function loginController ($scope, loginService, $window) {
     /* jshint validthis: true */
 
     const vm = this;
@@ -22,8 +22,8 @@
 
       loginService.login(vm.loginObj)
       .then(login => {
-        vm.loggedIn = true;
         vm.form = false;
+        $window.location.href = 'http://localhost:3000/#/profile';
       })
       .catch((err) => console.log(err));
     }

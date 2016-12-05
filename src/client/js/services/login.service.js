@@ -12,7 +12,7 @@
     /* jshint validthis: true */
     const baseURL = 'http://localhost:3000/login/'
 
-    this.login = function (loginObj) {
+    this.login = (loginObj) => {
       return $http({
         method: 'POST',
         url: baseURL + 'go',

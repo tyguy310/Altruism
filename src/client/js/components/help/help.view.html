@@ -1,8 +1,7 @@
 <h1>Current Helps</h1>
+
 <table class="table table-bordered table-striped">
   <tr>
-    <th>Asker id</th>
-    <th>Helper id</th>
     <th>Description</th>
     <th>Subject</th>
     <th>Type</th>
@@ -11,8 +10,6 @@
     <th>Zip</th>
   </tr>
   <tr ng-repeat="help in helpCtrl.help">
-    <td>{{help.asker_id}}</td>
-    <td>{{help.helper_id}}</td>
     <td>{{help.description}}</td>
     <td>{{help.subject}}</td>
     <td>{{help.type}}</td>
@@ -22,10 +19,10 @@
   </tr>
 </table>
 
-<div ng-if="helpCtrl.form">
+<!-- <div ng-if="helpCtrl.form">
   <div class="col-md-4">
     <form ng-submit="helpCtrl.addHelp()">
-      <!-- <div class="form-group">
+      <div class="form-group">
         <input type="text" class="form-control" id="username" ng-model="helpCtrl.helpObj.username" placeholder="Username" required>
       </div>
       <div class="form-group">
@@ -33,6 +30,6 @@
       </div>
       <div class="form-group">
         <input type="text" class="form-control" id="password" ng-model="helpCtrl.helpObj.password" placeholder="Password" required>
-      </div> -->
-      <button type="submit" class="btn btn-default">Add Help</button>
-    </form>
+      </div>
+      <button type="submit" class="btn btn-default">ASK FOR HELP</button>
+    </form> -->
