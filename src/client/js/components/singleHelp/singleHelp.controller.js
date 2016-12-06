@@ -6,12 +6,18 @@
     .module('Altruism.components.singleHelp', [])
     .controller('singleHelpController', singleHelpController);
 
-  singleHelpController.$inject = ['$scope', 'singleHelpService', $routeParams];
+  singleHelpController.$inject = ['singleHelpService', 'chatService', '$routeParams'];
 
-  function singleHelpController ($scope, singleHelpService, $routeParams) {
+  function singleHelpController (singleHelpService, chatService, $routeParams) {
     /* jshint validthis: true */
     const vm = this;
     const id = $routeParams.id;
+    this.messages = [];
+
+    this.sendMessage = (msg) => {
+      this.messages.push(chatService.sendMessage(msg));
+    }
+
 
     singleHelpService.getSingleHelp(id)
     .then((help) => {
