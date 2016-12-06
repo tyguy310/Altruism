@@ -34,6 +34,7 @@ exports.up = function(knex, Promise) {
       table.string('zip');
       table.string('start_time');
       table.string('end_time');
+      table.integer('duration');
       table.timestamps();
     }),
 
