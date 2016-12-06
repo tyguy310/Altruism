@@ -23,7 +23,7 @@
       loginService.login(vm.loginObj)
       .then(login => {
         vm.form = false;
-        $window.location.href = 'http://localhost:3000/#/profile';
+        $window.location.href = 'https://altruism-app.herokuapp.com/#/profile';
       })
       .catch((err) => console.log(err));
     }

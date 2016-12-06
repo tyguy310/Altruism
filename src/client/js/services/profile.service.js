@@ -11,7 +11,7 @@
   function profileService ($http, $scope) {
     /* jshint validthis: true */
 
-    const baseURL = 'http://localhost:3000/profile/'
+    const baseURL = 'https://altruism-app.herokuapp.com/profile/'
 
     this.getSingleProfile = (id) => {
       return $http.get(`${baseURL}${id}`);
