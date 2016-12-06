@@ -19,13 +19,12 @@
 
     helpService.getAllHelp()
     .then((helps) => {
-      vm.help = helps.data.data;
+      vm.help = helps.data.help;
+      console.log(helps);
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err); // handle this error
     });
-
-    // console.log($scope.$parent.$id);
 
     vm.addHelp = () => {
       helpService.addHelp(helpObj)
@@ -36,13 +35,15 @@
       .catch(err => console.log('Controller', err));
     };
 
-    // helpService.getSingleHelp()
-    // .then((help) => {
-    //   vm.help = help.data.data
-    //   console.log(help);
-    // })
-    // .catch((err) => {
-    //   console.log(err);
-    // });
+    vm.singleHelp = (id) => {
+      helpService.getSingleHelp(id)
+      .then((help) => {
+        vm.help = help.data.help
+        console.log(help);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
   }
 })();

@@ -5,14 +5,13 @@ const queries = require('../db/queries');
 router.get('/', (req, res, next) => {
   queries.getItems('helps', (err, result) => {
     if (err) {
-      console.log(err);
       res.status(404).json({
         error: 'fail'
       })
     } else {
       res.status(200).json({
         status: 'success',
-        data: result
+        help: result
       })
     }
   })

@@ -10,15 +10,17 @@
 
   function helpService ($http) {
     /* jshint validthis: true */
-    const baseURL = 'https://altruism-app.herokuapp.com/help/'
+    const baseURL = 'http://localhost:3000/help/'
 
-    this.getAllHelp = function () {
+    this.getAllHelp = () => {
       return $http.get(baseURL);
     };
-    this.getSingleHelp = function (id) {
+
+    this.getSingleHelp = id => {
       return $http.get(`${baseURL}${id}`);
     };
-    this.addHelp = function (helpObj) {
+
+    this.addHelp = helpObj => {
       return $http({
         method: 'POST',
         url: baseURL,

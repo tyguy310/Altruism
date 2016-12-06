@@ -9,7 +9,7 @@
     <th>State</th>
     <th>Zip</th>
   </tr>
-  <tr ng-repeat="help in helpCtrl.help">
+  <tr ng-repeat="help in helpCtrl.help" ng-click="helpCtrl.singleHelp(help.id)">
     <td>{{help.description}}</td>
     <td>{{help.subject}}</td>
     <td>{{help.type}}</td>
