@@ -24,9 +24,10 @@
 
 <div ng-if="profileCtrl.profile.helps.length > 0" class="text-center col-md-8 container helps">
   <button type="submit" class="btn btn-default"><a href="#/help">HELP SOMEONE</a></button>
-  <h3 class="text-center">Current Helps</h3>
+  <h3 class="text-center">Currently Helping</h3>
   <table class="table table-bordered table-striped helpsTable">
     <tr>
+      <th></th>
       <th>Asker id</th>
       <th>Description</th>
       <th>Subject</th>
@@ -35,6 +36,9 @@
       <th>State</th>
     </tr>
     <tr ng-repeat="help in profileCtrl.profile.helps">
+      <td>
+        <button type="click" class="btn btn-default"><a href="#/singleHelp/{{help.id}}">View Help</a></button>
+      </td>
       <td>{{help.asker_id}}</td>
       <td>{{help.description}}</td>
       <td>{{help.subject}}</td>
@@ -49,9 +53,10 @@
 
 <div ng-if="profileCtrl.profile.asks.length > 0" class="text-center col-md-8 container asks">
   <button type="submit" class="btn btn-default">SUBMIT NEW HELP</button>
-  <h3 class="text-center">Current Asks</h3>
+  <h3 class="text-center">MY ASKS</h3>
   <table class="table table-bordered table-striped asksTable">
     <tr>
+      <th></th>
       <th>Helper id</th>
       <th>Description</th>
       <th>Subject</th>
@@ -60,6 +65,9 @@
       <th>State</th>
     </tr>
     <tr ng-repeat="ask in profileCtrl.profile.asks">
+      <td>
+        <button type="click" class="btn btn-default"><a href="#/singleHelp/{{ask.id}}">VIEW ASK</a></button>
+      </td>
       <td>{{ask.helper_id}}</td>
       <td>{{ask.description}}</td>
       <td>{{ask.subject}}</td>

@@ -1,0 +1,28 @@
+<h1>Help</h1>
+
+<button type="click" class="btn btn-default"><a href="#/help">ALL HELPS</a></button>
+
+<button type="click" class="btn btn-default contactAsker">APPLY TO HELP</button>
+
+<div class="container col-sm-8 helpContainer">
+  <h4>Description</h4>
+  <p>{{singleHelpCtrl.help.description}}</p>
+  <div class="row">
+    <div class="col-sm-3">
+      <h4>Subject</h4>
+      <p>{{singleHelpCtrl.help.subject}}</p>
+    </div>
+    <div class="col-sm-3">
+      <h4>Type</h4>
+      <p>{{singleHelpCtrl.help.type}}</p>
+    </div>
+    <div class="col-sm-3">
+      <h4>Duration (hrs)</h4>
+      <p>{{singleHelpCtrl.help.duration}}</p>
+    </div>
+  </div>
+  <div ng-if="singleHelpCtrl.help.city">
+    <h4>Location</h4>
+    <p>{{singleHelpCtrl.help.city}}, {{singleHelpCtrl.help.state}}</p>
+  </div>
+</div>

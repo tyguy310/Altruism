@@ -2,12 +2,21 @@ body {
   /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   position: relative;
+  padding-bottom: 60px;
 }
 
 .subBar {
   width:95%;
   margin-top: 50px;
   z-index: 2;
+}
+
+.footer {
+  border-top: 2px solid lightgray;
+  position:absolute;
+  bottom: 0;
+  width:100%;
+  clear: both;
 }
 
 a {
@@ -23,14 +32,14 @@ a {
 
 .how {
   float: right;
-  /*border: 2px solid black;*/
-  border-radius: 5px;
+  border: 2px solid lightgray;
+  border-radius: 10px;
   margin: 3rem;
 }
 
 .why {
   float: left;
-  /*border: 2px solid black;*/
-  border-radius: 5px;
+  border: 2px solid lightgray;
+  border-radius: 10px;
   margin: 3rem;
 }

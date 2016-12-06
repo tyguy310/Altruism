@@ -20,6 +20,12 @@
         controllerAs: 'helpCtrl',
         access: true
       })
+      .when('/singleHelp/:id', {
+        templateUrl: 'js/components/singleHelp/singleHelp.view.html',
+        controller: 'singleHelpController',
+        controllerAs: 'singleHelpCtrl',
+        access: true
+      })
       .when('/register', {
         templateUrl: 'js/components/register/register.view.html',
         controller: 'registerController',

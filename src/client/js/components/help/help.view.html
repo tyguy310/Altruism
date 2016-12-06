@@ -1,7 +1,10 @@
 <h1>Current Helps</h1>
 
+  <button type="click" class="btn btn-default" ng-click="helpCtrl.reloadHelp()">ALL HELPS</button>
+
 <table class="table table-bordered table-striped">
   <tr>
+    <th></th>
     <th>Description</th>
     <th>Subject</th>
     <th>Type</th>
@@ -9,7 +12,10 @@
     <th>State</th>
     <th>Duration</th>
   </tr>
-  <tr ng-repeat="help in helpCtrl.help" ng-click="helpCtrl.singleHelp(help.id)">
+  <tr ng-repeat="help in helpCtrl.help">
+    <td>
+      <button type="click" class="btn btn-default"><a href="#/singleHelp/{{help.id}}">View Help</a></button>
+    </td>
     <td>{{help.description}}</td>
     <td>{{help.subject}}</td>
     <td>{{help.type}}</td>

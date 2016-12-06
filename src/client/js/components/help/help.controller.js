@@ -20,11 +20,21 @@
     helpService.getAllHelp()
     .then((helps) => {
       vm.help = helps.data.help;
-      console.log(helps);
     })
     .catch(err => {
       console.log(err); // handle this error
     });
+
+    vm.reloadHelp = () => {
+      helpService.getAllHelp()
+      .then((helps) => {
+        vm.help = helps.data.help;
+        console.log(helps);
+      })
+      .catch(err => {
+        console.log(err); // handle this error
+      });
+    }
 
     vm.addHelp = () => {
       helpService.addHelp(helpObj)
