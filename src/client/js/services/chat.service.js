@@ -15,8 +15,8 @@
     Pubnub.init({
       // publish_key: config.PUBNUB_PUBLISH_KEY,
       // subscribe_key: config.PUBNUB_SUBSCRIBE_KEY,
-      publish_key: process.env.PUBNUB_PUBLISH_KEY,
-      subscribe_key: process.env.PUBNUB_SUBSCRIBE_KEY,
+      publish_key: 'pub-c-5edfaba1-63ae-4681-b421-5da5c2f0534d',
+      subscribe_key: 'sub-c-c439bfe2-bc01-11e6-b490-02ee2ddab7fe',
       uuid: this.uuid
     });
 

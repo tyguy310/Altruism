@@ -10,8 +10,8 @@
 
   function sendgridService ($http) {
 
-    const baseURL = 'https://altruism-app.herokuapp.com/sendgrid/'
-    // const baseURL = 'http://localhost:3000/sendgrid/'
+    // const baseURL = 'https://altruism-app.herokuapp.com/sendgrid/'
+    const baseURL = 'http://localhost:3000/sendgrid/'
 
     this.sendgrid = (sendgridObj) => {
       return $http({
