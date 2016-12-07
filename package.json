@@ -24,7 +24,8 @@
     "passport-local": "^1.0.0",
     "pg": "6.1.0",
     "pubnub": "^4.3.2",
-    "pubnub-angular": "^4.0.2"
+    "pubnub-angular": "^4.0.2",
+    "sendgrid": "^4.7.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",

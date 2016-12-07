@@ -17,6 +17,22 @@ body {
   bottom: 0;
   width:100%;
   clear: both;
+  background-color: #fff;
+}
+
+.copyright {
+  display: inline-block;
+  float: left;
+}
+
+.footer-icons {
+  display: inline-block;
+  float: right}
+
+.terms {
+  display: inline-block;
+  float: right;
+  margin-right: 10px;
 }
 
 a {
@@ -28,6 +44,11 @@ a {
   position:relative;
   overflow: hidden;
   z-index: 1;
+}
+
+.carousel-caption-btn {
+  border: 2 px solid lightgray;
+  border-radius: 10px;
 }
 
 .how {

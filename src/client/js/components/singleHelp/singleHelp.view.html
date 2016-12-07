@@ -1,8 +1,8 @@
 <h1>Help</h1>
 
-<button type="click" class="btn btn-default"><a href="#/help">ALL HELPS</a></button>
-
-<button type="click" class="btn btn-default contactAsker">APPLY TO HELP</button>
+<div class="container allHelpBtn">
+  <button type="click" class="btn btn-default"><a href="#/help">ALL HELPS</a></button>
+</div>
 
 <div class="container col-sm-8 helpContainer">
   <h4>Description</h4>
@@ -27,11 +27,16 @@
   </div>
 </div>
 
-<div class="container col-sm-4">
+<div class="container col-sm-4 applyCntr" ng-if="!singleHelpCtrl.help.helper_id || singleHelpCtrl.help.asker_id===1">
+  <button ng-if="!singleHelpCtrl.applied" ng-click="singleHelpCtrl.sendEmail('tylerlmaier@gmail.com', 'tyler_maier@yahoo.com'); singleHelpCtrl.applied=true" type="click" class="btn btn-default contactAsker"><a href="">APPLY TO HELP</a></button>
+  <h4 class="applicationStatus" ng-if="singleHelpCtrl.applied">Applied: Waiting for asker to accept</h4>
+</div>
+
+<div class="container col-sm-4 chatbox" ng-if="singleHelpCtrl.help.helper_id">
   <div>
      <form ng-submit="singleHelpCtrl.sendMessage(messageContent)">
        <input ng-model="messageContent" type="text" placeholder="Type your message" />
-       <button type="submit">Send</button>
+       <button  class="btn" type="submit">Send</button>
       </form>
   </div>
   <ul>

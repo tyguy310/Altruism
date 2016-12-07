@@ -10,8 +10,8 @@
 
   function helpService ($http) {
     /* jshint validthis: true */
-    // const baseURL = 'https://altruism-app.herokuapp.com/help/'
-    const baseURL = 'http://localhost:3000/help/'
+    const baseURL = 'https://altruism-app.herokuapp.com/help/'
+    // const baseURL = 'http://localhost:3000/help/'
 
     this.getAllHelp = () => {
       return $http.get(baseURL);

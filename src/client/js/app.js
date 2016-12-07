@@ -14,6 +14,7 @@
       'Altruism.components.register',
       'Altruism.components.login',
       'Altruism.services.chat',
+      'Altruism.services.sendgrid',
       'Altruism.services.help',
       'Altruism.services.singleHelp',
       'Altruism.services.profile',

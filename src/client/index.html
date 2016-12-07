@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
+    <link rel="stylesheet" type="text/css" href="css/singleHelp.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body ng-cloak>
@@ -65,11 +66,17 @@
 
     <div class="container footer">
       <br>
-      <div class="text-center center-block">
+      <div class="copyright">
+        <a>&copy 2016 Altruism</a>
+      </div>
+      <div class="footer-icons">
         <a href=""><i class="fa fa-facebook-square fa-3x social"></i></a>
   	    <a href=""><i class="fa fa-twitter-square fa-3x social"></i></a>
-  	    <a href=""><i class="fa fa-google-plus-square fa-3x social"></i></a>
-  	    <a href=""><i class="fa fa-envelope-square fa-3x social"></i></a>
+  	    <a href=""><i class="fa fa-envelope-plus-square fa-3x social"></i></a>
+  	    <a href="https://github.com/tyguy310/Altruism"><i class="fa fa-github-square fa-3x social"></i></a>
+      </div>
+      <div class="terms">
+        <a href="#/terms">Terms of Service</a>
       </div>
     </div>
 
@@ -113,6 +120,9 @@
     <script src="https://cdn.pubnub.com/pubnub-3.7.21.js"></script>
     <script src="https://cdn.pubnub.com/sdk/pubnub-angular/pubnub-angular-3.2.1.js"></script>
     <script type="text/javascript" src="js/services/chat.service.js"></script>
+
+    <!-- SendGrid component -->
+    <script type="text/javascript" src="js/services/sendgrid.service.js"></script>
 
   </body>
 </html>

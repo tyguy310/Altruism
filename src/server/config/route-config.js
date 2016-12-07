@@ -9,6 +9,7 @@
     const logout = require('../routes/logout');
     const helps = require('../routes/helps');
     const profile = require('../routes/profile');
+    const sendgrid = require('../routes/sendgrid');
 
     // *** register routes *** //
     app.use('/', routes);
@@ -17,5 +18,6 @@
     app.use('/help', helps);
     app.use('/logout', logout);
     app.use('/profile', profile);
+    app.use('/sendgrid', sendgrid);
   };
 })(module.exports);
