@@ -23,18 +23,4 @@ router.post('/', (req, res) => {
   });
 });
 
-// router.post('/go', (req, res, next) => {
-//   queries.postItems('accounts', (err, result) => {
-//     if (err) {
-//       res.json({
-//         routeError: err.message || 'Profile not found.'
-//       })
-//     } else {
-//       res.json({
-//         account: result
-//       })
-//     }
-//   }, req.body);
-// });
-
 module.exports = router;

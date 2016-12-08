@@ -29,7 +29,6 @@
       helpService.getAllHelp()
       .then((helps) => {
         vm.help = helps.data.help;
-        console.log(helps);
       })
       .catch(err => {
         console.log(err); // handle this error
@@ -49,7 +48,6 @@
       helpService.getSingleHelp(id)
       .then((help) => {
         vm.help = help.data.help
-        console.log(help);
       })
       .catch((err) => {
         console.log(err);

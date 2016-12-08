@@ -18,13 +18,16 @@ exports.getItems = (tableName, callback, itemId) => {
   }
 }
 
-exports.getProfile = (callback, profileId) => {
-  return Promise.all([
-    knex('profiles').where('id', profileId).first(),
-    knex('helps').where('helper_id', profileId),
-    knex('helps').where('asker_id', profileId)
-  ])
-  .then(data => callback(null, data))
+exports.getProfile = (callback, accountID) => {
+  knex('profiles').where('account_id', accountID).first()
+  .then(data => {
+    return Promise.all([
+      knex('profiles').where('account_id', accountID).first(),
+      knex('helps').where('helper_id', data.id),
+      knex('helps').where('asker_id', data.id)
+    ])
+    .then(data => callback(null, data))
+  })
   .catch(err => callback(err))
 }
 
@@ -60,13 +63,13 @@ exports.updateAccount = (id, callback, accountType) => {
   if (accountType === 'is_helper') {
     knex('profiles')
     .returning('*')
-    .where('id', id)
+    .where('account_id', id)
     .update('is_helper', true)
     .then(result => callback(null, result))
     .catch(err => callback(err));
   } else if (accountType === 'is_asker') {
     knex('profiles')
-    .where('id', id)
+    .where('account_id', id)
     .update('is_asker', true)
     .then(result => callback(null, result))
     .catch(err => callback(err));

@@ -10,7 +10,7 @@ router.post('/go', (req, res, next) => {
   queries.postItems('accounts', (err, result) => {
     if (err) {
       res.json({
-        routeError: err.message || 'Profile not found.'
+        routeError: err.message || 'Account not found.'
       })
     } else {
       res.json({

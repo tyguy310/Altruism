@@ -38,7 +38,7 @@
         controllerAs: 'loginCtrl',
         access: true
       })
-      .when('/profile/', {
+      .when('/profile/:id', {
         templateUrl: 'js/components/profile/profile.view.html',
         controller: 'profileController',
         controllerAs: 'profileCtrl',

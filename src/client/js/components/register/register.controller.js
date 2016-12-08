@@ -6,14 +6,21 @@
     .module('Altruism.components.register', [])
     .controller('registerController', registerController);
 
-  registerController.$inject = ['$scope', 'registerService'];
+  registerController.$inject = ['$scope', 'registerService', '$window', '$rootScope'];
 
-  function registerController ($scope, registerService) {
+  function registerController ($scope, registerService, $window, $rootScope) {
     /* jshint validthis: true */
     const vm = this;
-    vm.form = false;
     vm.registerObj = {};
-    vm.showForm = function () {
+
+    if ($rootScope.id) {
+      vm.form = false;
+      $window.location.href = 'http://localhost:3000/#/profile/' + $rootScope.id;
+    } else {
+      vm.form = true;
+    }
+
+    vm.showForm = () => {
       vm.form = true;
     };
 
@@ -28,9 +35,9 @@
     vm.Register = () => {
       registerService.registerAccount(vm.registerObj)
       .then(response => {
-        $scope.$parent.$id = response.data.account[0].id;
+        $rootScope.id = response.data.account[0].id
         vm.form = false;
-        console.log($scope.$parent.$id);
+        $window.location.href = 'http://localhost:3000/#/profile/' + $rootScope.id;
       })
       .catch(err => console.log('controller', err));
     }

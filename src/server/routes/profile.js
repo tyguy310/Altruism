@@ -3,7 +3,7 @@ const router = express.Router();
 const queries = require('../db/queries');
 
 router.get('/:id', (req, res, next) => {
-  let profileID = req.params.id;
+  let accountID = req.params.id;
 
   queries.getProfile((err, result) => {
     if (err) {
@@ -17,7 +17,21 @@ router.get('/:id', (req, res, next) => {
         asks: result[2]
       })
     }
-  }, profileID)
+  }, accountID)
+})
+
+router.post('/', (req, res, next) => {
+  queries.postItems('profiles', (err, result) => {
+    if (err) {
+      res.json({
+        routeError: err.message || 'profile not created'
+      })
+    } else {
+      res.json({
+        account: result
+      })
+    }
+  }, req.body);
 })
 
 router.put('/:id', (req, res, next) => {

@@ -1,6 +1,6 @@
 <h1>Profile</h1>
 
-<div class="registerContainer">
+<div ng-if="!profileCtrl.form" class="registerContainer">
   <div class="registerButtons">
     <div ng-if="!profileCtrl.profile.profile.is_helper">
       <button type="button" class="btn btn-default" ng-click="profileCtrl.Register('is_helper', profileCtrl.profile.profile.id); profileCtrl.profile.profile.is_helper=true">Register as a Helper</button>
@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div class="container profile col-md-4">
+<div ng-if="profileCtrl.profile.profile" class="container profile col-md-4">
   <div class="row">
     <img src="{{profileCtrl.profile.profile.img_url}}">
     <h3>{{profileCtrl.profile.profile.first_name}} {{profileCtrl.profile.profile.last_name}}</h3>
@@ -21,9 +21,8 @@
 </div>
 
 <!-- Helps Table -->
-
+<button type="submit" class="btn btn-default"><a href="#/help">HELP SOMEONE</a></button>
 <div ng-if="profileCtrl.profile.helps.length > 0" class="text-center col-md-8 container helps">
-  <button type="submit" class="btn btn-default"><a href="#/help">HELP SOMEONE</a></button>
   <h3 class="text-center">Currently Helping</h3>
   <table class="table table-bordered table-striped helpsTable">
     <tr>
@@ -50,9 +49,8 @@
 </div>
 
 <!-- Asks Table -->
-
+<button type="submit" class="btn btn-default">ASK FOR HELP</button>
 <div ng-if="profileCtrl.profile.asks.length > 0" class="text-center col-md-8 container asks">
-  <button type="submit" class="btn btn-default">SUBMIT NEW HELP</button>
   <h3 class="text-center">MY ASKS</h3>
   <table class="table table-bordered table-striped asksTable">
     <tr>
@@ -78,57 +76,26 @@
   </table>
 </div>
 
-<!-- <div ng-if="helpCtrl.form"> -->
-  <!-- <div class="col-md-4">
-    <form ng-submit="helpCtrl.addHelp()">
-      <div class="form-group">
-        <input type="text" class="form-control" id="username" ng-model="helpCtrl.helpObj.username" placeholder="Username" required>
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="email" ng-model="helpCtrl.helpObj.email" placeholder="Email" required>
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="password" ng-model="helpCtrl.helpObj.password" placeholder="Password" required>
-      </div>
-      <button type="submit" class="btn btn-default">ASK FOR HELP</button>
-    </form> -->
-
-<!-- <div ng-if="coffeeCtrl.form">
+<div  ng-if="!profileCtrl.profile.profile">
   <div class="col-md-4">
-    <form ng-submit="coffeeCtrl.addCoffee()">
+    <form ng-submit="profileCtrl.createProfile()">
       <div class="form-group">
-        <input type="text" class="form-control" id="name" ng-model="coffeeCtrl.coffeeObj.name" placeholder="Name" required>
+        <input type="text" class="form-control" id="first_name" ng-model="profileCtrl.newProfile.first_name" placeholder="First Name" required>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="roaster" ng-model="coffeeCtrl.coffeeObj.roaster" placeholder="Roaster" required>
+        <input type="text" class="form-control" id="last_name" ng-model="profileCtrl.newProfile.last_name" placeholder="Last Name" required>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="origin" ng-model="coffeeCtrl.coffeeObj.origin" placeholder="Origin" required>
+        <input type="text" class="form-control" id="intro" ng-model="profileCtrl.newProfile.intro" placeholder="Introduce yourself" required>
       </div>
       <div class="form-group">
-        <label>Roast:</label>
-        <select class="form-control" ng-model="coffeeCtrl.coffeeObj.roast" required>
-          <option>Dark</option>
-          <option>Medium</option>
-          <option>Light</option>
-        </select>
+        <input type="text" class="form-control" id="img_url" ng-model="profileCtrl.newProfile.img_url" placeholder="Avatar Image" required>
       </div>
       <div class="form-group">
-        <input type="number" class="form-control" id="caffeine" ng-model="coffeeCtrl.coffeeObj.caffeine" placeholder="Caffeine" required>
+        <input type="text" class="form-control" id="city" ng-model="profileCtrl.newProfile.city" placeholder="City" required>
       </div>
       <div class="form-group">
-        <label>Decaf:</label>
-        <select class="form-control" ng-model="coffeeCtrl.coffeeObj.decaf" required>
-          <option>true</option>
-          <option>false</option>
-        </select>
+        <input type="text" class="form-control" id="state" ng-model="profileCtrl.newProfile.state" placeholder="State" required>
       </div>
-      <div class="form-group">
-        <input type="number" class="form-control" id="price" ng-model="coffeeCtrl.coffeeObj.price" placeholder="Price" required>
-      </div>
-      <div class="form-group">
-        <label for="quantity">Coffee Quantity</label>
-        <input type="number" class="form-control" id="quantity" ng-model="coffeeCtrl.coffeeObj.quantity" placeholder="Quantity" required>
-      </div>
-      <button type="submit" class="btn btn-default">Add</button>
-    </form> -->
+      <button type="submit" class="btn btn-default">Create Profile</button>
+    </form>

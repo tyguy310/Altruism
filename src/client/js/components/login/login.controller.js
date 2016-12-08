@@ -6,13 +6,18 @@
     .module('Altruism.components.login', [])
     .controller('loginController', loginController);
 
-  loginController.$inject = ['$scope', 'loginService', '$window'];
+  loginController.$inject = ['$scope', 'loginService', '$window', '$rootScope'];
 
-  function loginController ($scope, loginService, $window) {
+  function loginController ($scope, loginService, $window, $rootScope) {
     /* jshint validthis: true */
 
     const vm = this;
-    vm.form = true;
+    if ($rootScope.id) {
+      vm.form = false;
+    } else {
+      vm.form = true;
+    }
+
     vm.loginObj = {};
     vm.showForm = function () {
       vm.form = true;
@@ -22,8 +27,9 @@
 
       loginService.login(vm.loginObj)
       .then(login => {
+        $rootScope.id = login.data.data[0].id
         vm.form = false;
-        $window.location.href = 'https://altruism-app.herokuapp.com/#/profile';
+        $window.location.href = 'http://localhost:3000/#/profile/' + $rootScope.id;
       })
       .catch((err) => console.log(err));
     }
